@@ -346,9 +346,9 @@ body {
         text-shadow: 0 0 0 white;
         color: rgba(0, 0, 0, 0);
     }
-    .myAva img{
-        height: 200px;
-        width: 200px;
+    .content .myBio .myAva .ava{
+        height: 100vw;
+        width: 100vw;
     }
     .myPict{
         right: 0;
