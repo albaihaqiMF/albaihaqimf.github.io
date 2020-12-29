@@ -149,8 +149,18 @@ body {
 
 .social-media ul li a {
     font-family: 'Yanone Kaffeesatz', sans-serif;
-    color: white;
     text-decoration: none;
+}
+.youtube {
+    color: white;
+}
+
+.facebook {
+    color: white;
+}
+
+.instagram {
+    color: white;
 }
 
 .youtube:hover {
@@ -379,11 +389,11 @@ body {
     .youtube{
         color: red;
     }
-
+    
     .facebook{
         color: blue;
     }
-
+    
     .instagram{
         background: -webkit-linear-gradient(#F8DA29, #E90401, #B103B4);
         background-clip: text;
