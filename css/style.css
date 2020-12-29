@@ -376,6 +376,20 @@ body {
     .navbar .logo {
         padding: 20px 5px;
     }
+    .youtube{
+        color: red;
+    }
+
+    .facebook{
+        color: blue;
+    }
+
+    .instagram{
+        background: -webkit-linear-gradient(#F8DA29, #E90401, #B103B4);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
     .navbar .logo a {
         font-size: 25px;
         color: white;
