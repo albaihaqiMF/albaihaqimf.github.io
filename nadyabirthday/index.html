@@ -1,1 +1,113 @@
-Hello Nadya
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- style -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <!-- jquery cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <title>Nadya's Birthday</title>
+</head>
+
+<body>
+    <div class="preloading" id="preloading">
+        <img src="img/favicon.png" alt="" height="95px">
+        <div class="loading load1"></div>
+        <div class="loading load2"></div>
+        <div class="loading load3"></div>
+    </div>
+    <div class="modal-container" id="myModal">
+        <div class="modal">
+            <div class="header-modal">
+                <h3><span>!!!</span>WARNING KEUWUAN<span>!!!</span></h3>
+            </div>
+            <div class="content-modal">
+                <p>Udah Siap Sayang?</p>
+            </div>
+            <div class="footer-modal">
+                <button class="ready" onclick="clickHandler()">siap</button>
+            </div>
+        </div>
+    </div>
+
+    <audio src="./song.mp3" id="myAudio"></audio>
+    <div class="container" id="content">
+        <button onclick="mySong()" class="audio-button" title="pause/play song"><i class='fas fa-pause'
+                id="audioBtn"></i></button>
+        <section class="welcome">
+            <div class="underbg">
+                <div class="gift-card">
+                    <h1 class="nyut animate__animated animate__rotateInDownRight">Happy Birthday Nyutt</h1>
+                    <h1 class="nyut animate__animated animate__rotateInUpRight">ke-21 Tahun</h1>
+                </div>
+                <img src="img/hbd.gif" alt="" class="hbdGif animate__animated animate__slideInDown">
+            </div>
+            <div class="banner">
+                <div class="blocks"></div>
+            </div>
+        </section>
+        <div class="myCard">
+            <div class="mySlide">
+                <div class="card-container">
+                    <div class="card">
+                        <img src="img/IMG-20200623-WA0004.jpg" alt="" class="img-card" height="600" width="400">
+                    </div>
+                    <div class="card">
+                        <img src="img/IMG-20200921-WA0004.jpg" alt="" class="img-card" height="600" width="400">
+                    </div>
+                    <div class="card">
+                        <img src="img/IMG-20201203-WA0003.jpg" alt="" class="img-card res" height="600" width="400">
+                    </div>
+                    <div class="card">
+                        <img src="img/IMG-20201226-WA0001.jpg" alt="" class="img-card res" height="600" width="400">
+                    </div>
+                    <div class="card">
+                        <img src="img/IMG-20201203-WA0005.jpg" alt="" class="img-card" height="600" width="400">
+                    </div>
+                    <div class="content-card">
+                        <h1>Happy Birthday to You</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nadee">
+            <div class="img">
+                <img src="img/nadee.jpg" alt="Nadee Pict" class="img-profile" />
+            </div>
+            <div class="mywish">
+                <p>I hope you can be the best version of yourself</p>
+                <p>And don't forget that I'm here for you to always support you with love</p>
+                <span>Lovyuuu My Love</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- script -->
+<script>
+    const banner = document.getElementsByClassName('banner')[0];
+    const blocks = document.getElementsByClassName('blocks');
+    for (var i = 1; i < 400; i++) {
+        banner.innerHTML += "<div class='blocks'></div>";
+        const duration = Math.random() * 5;
+        blocks[i].style.animationDuration = 4 + duration + 's'
+        // blocks[i].style.animationDelay = duration+'s'
+    }
+
+    const section = document.querySelector('section');
+    function clickHandler() {
+        setTimeout(() => { section.classList.add('active') }, 12000)
+    }
+</script>
+<script src="js/script.js"></script>
+
+
+</html>
