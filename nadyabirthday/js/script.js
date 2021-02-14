@@ -10,7 +10,7 @@ $(document).ready(function(){
 var cond = true;
 var myAudio = document.getElementById('myAudio');
 var audioBtn = document.getElementById('audioBtn');
-// myAudio.play();
+myAudio.play();
 
 function mySong(){
     cond ? audioBtn.classList.replace('fa-pause', 'fa-play') : audioBtn.classList.replace('fa-play', 'fa-pause');
