@@ -162,6 +162,12 @@ body {
     cursor: pointer;
 }
 
+@media only screen and (max-width:600px) {
+    .modal {
+        width: 85%;
+    }
+}
+
 /* end modal style */
 
 
@@ -181,16 +187,23 @@ body {
     right: 30px;
     bottom: 30px;
     overflow: auto;
-    background-color: red;
     border: none;
-    padding: 15px;
-    border-radius: 50%;
-    font-size: 20px;
+    clip-path: circle(25px);
+    font-size: 50px;
+    padding-top: 4px;
+    color: blue;
 }
 
-.audio-button:hover {
-    background-image: linear-gradient(to right, red, crimson);
+.audio-button .far {
+    background: -webkit-linear-gradient(blue, purple, crimson);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.audio-button:hover .far {
+    background-image: linear-gradient(to top right, blue, purple, crimson);
     cursor: pointer;
+    color: white;
 }
 
 .audio-button:hover .fas {
@@ -312,6 +325,7 @@ section.active .banner .blocks {
         height: 60vw;
     }
 }
+
 @media only screen and (max-width:400px) {
     .nyut {
         font-size: 50px;
@@ -391,10 +405,11 @@ section.active .banner .blocks {
 }
 
 @media only screen and (max-width:600px) {
-    .img-card{
+    .img-card {
         height: 100%;
     }
-    .content-card{
+
+    .content-card {
         height: auto;
     }
 }
@@ -406,7 +421,7 @@ section.active .banner .blocks {
     width: 100%;
     height: auto;
     display: flex;
-    background: url(../img/bgBaru.jpg) no-repeat;
+    /* background: url(../img/bgBaru.jpg) no-repeat; */
     background-size: cover;
 }
 
@@ -447,28 +462,136 @@ section.active .banner .blocks {
     font-weight: 700;
     font-size: 1.5vw;
 }
-@media only screen and (max-width:600px){
-    .nadee{
+
+@media only screen and (max-width:600px) {
+    .nadee {
         height: auto;
         display: block;
     }
-    .nadee .img{
+
+    .nadee .img {
         margin: auto;
         display: block;
     }
-    .nadee .img .img-profile{
+
+    .nadee .img .img-profile {
         width: 100%;
         height: auto;
     }
-    .nadee .mywish{
+
+    .nadee .mywish {
         width: 80%;
         margin: 0;
     }
-    .nadee .mywish p{
+
+    .nadee .mywish p {
         font-size: 7vw;
     }
-    .nadee .mywish span{
+
+    .nadee .mywish span {
         font-size: 5vw
     }
 }
+
 /* wish end styling */
+
+/* Gift Box start styling */
+.your-gift {
+    min-height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gift-button .gift-box {
+    height: 300px;
+}
+
+.gift-button:hover .gift-box {
+    box-shadow: 0 0 30px crimson;
+    border-radius: 100%;
+    background-color: crimson;
+    animation: gift .6s ease-in-out infinite;
+    cursor: pointer;
+    /* animation-delay: .2s; */
+}
+
+.modal#giftModal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    /* margin: auto; */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 20px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:600px) {
+    .gift-button .gift-button {
+        height: 100px;
+        /* width: 80vw; */
+    }
+}
+
+@keyframes gift {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(2deg);
+    }
+
+    50% {
+        transform: rotate(-2deg);
+    }
+
+    75% {
+        transform: rotate(2deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Gift Box end styling */

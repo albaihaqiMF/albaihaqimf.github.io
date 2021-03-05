@@ -7,10 +7,11 @@
     <!-- style -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://kit.fontawesome.com/bf83c02ae3.js" crossorigin="anonymous"></script>
 
     <!-- jquery cdn -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/particle.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
@@ -40,7 +41,7 @@
 
     <audio src="./song.mp3" id="myAudio"></audio>
     <div class="container" id="content">
-        <button onclick="mySong()" class="audio-button" title="pause/play song"><i class='fas fa-pause'
+        <button onclick="mySong()" class="audio-button" title="pause/play song"><i class="far fa-pause-circle"
                 id="audioBtn"></i></button>
         <section class="welcome">
             <div class="underbg">
@@ -54,7 +55,7 @@
                 <div class="blocks"></div>
             </div>
         </section>
-        <div class="myCard">
+        <section class="myCard">
             <div class="mySlide">
                 <div class="card-container">
                     <div class="card">
@@ -77,17 +78,30 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="nadee">
-            <div class="img">
-                <img src="img/nadee.jpg" alt="Nadee Pict" class="img-profile" />
+        </section>
+        <section class="your-gift" id="particles-js">
+            <a onclick="giftHandler()" class="gift-button">
+                <img src="img/giftBox.png" alt="your gift" class="gift-box">
+            </a>
+            <div id="giftModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <section class="nadee">
+                        <div class="img">
+                            <img src="img/nadee.jpg" alt="Nadee Pict" class="img-profile" />
+                        </div>
+                        <div class="mywish">
+                            <p>I hope you can be the best version of yourself</p>
+                            <p>And don't forget that I'm here for you to always support you with love</p>
+                            <span>Lovyuuu My Love</span>
+                        </div>
+                    </section>
+                </div>
+
             </div>
-            <div class="mywish">
-                <p>I hope you can be the best version of yourself</p>
-                <p>And don't forget that I'm here for you to always support you with love</p>
-                <span>Lovyuuu My Love</span>
-            </div>
-        </div>
+        </section>
     </div>
 </body>
 
@@ -103,8 +117,42 @@
     }
 
     const section = document.querySelector('section');
+
     function clickHandler() {
-        setTimeout(() => { section.classList.add('active') }, 12000)
+        document.getElementById('myAudio').play()
+        setTimeout(() => {
+            section.classList.add('active')
+        }, 12000)
+    }
+
+    function giftHandler() {
+        alert('Your Gift')
+    }
+    var modal = document.getElementById("giftModal");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    function giftHandler() {
+        var condition = confirm('Jangan sampai kamu klik [No] :)')
+        if (condition) {
+            modal.style.display = "block";
+        } else {
+            alert('Ga usah dibuka kalo gitu!!!')
+        }
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
     }
 </script>
 <script src="js/script.js"></script>
